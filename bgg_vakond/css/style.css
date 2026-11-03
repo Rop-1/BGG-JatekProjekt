@@ -1,3 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body{
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  background-image: url(../img/bg.webp);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: auto;
+  background-attachment: fixed;
+  backdrop-filter: blur(10px);
+  height: 100vh;
+}
+main{
+    height: calc(100vh - 124px);
+}
+.jatekszabaly{
+    background-color: #faebd7;
+    border: 5px solid #a52a2a;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
 .form-select{
     width: 150px;
 }
+footer{
+    position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   text-align: center;
+}
+@media (max-width: 1400px) {
+    .container{
+        width: 100% !important;
+    }
+}
+

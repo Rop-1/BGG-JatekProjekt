@@ -11,25 +11,38 @@
 
 <body>
     <header>
-        <nav class="mt-4">
-            <div class="container w-50 border rounded-5 d-flex justify-content-between align-items-center">
-                <h1 class="ps-3">VakondCsapkodás</h1>
-                <select class="form-select">
+        <nav class="pt-4">
+            <div class="p-2 container w-50 border rounded-5 d-flex justify-content-between align-items-center">
+                <select class="form-select rounded-start-5">
                     <option>Könnyű</option>
                     <option>Normál</option>
                     <option>Lehetetlen</option>
                 </select>
-                <p class="m-0 border rounded p-2">időzítő: <span>20</span></p>
-                <p class="m-0 border rounded p-2">pont: <span>20</span></p>
+                <p class="m-0 border rounded p-2">Időzítő: <span>20</span></p>
+                <p class="m-0 border rounded p-2">Pont: <span>20</span></p>
                 <button type="button" class="btn btn-warning rounded-end-5 px-5">Start</button>
             </div>
         </nav>
     </header>
-    <main>
-
+    <main class="d-flex align-items-center justify-content-center">
+        <section>
+            <div class="container w-50 jatekszabaly p-3">
+                <h1 class="fs-2 text-center mb-5">
+                    Vakondcsapkodó <br> Játékszabályzat
+                </h1>
+                <ul class="lh-lg">
+                    <li><span class="text-warning"> A játék célja:</span> Minél több felbukkanó vakondot kell eltalálni a rendelkezésre álló idő alatt.</li>
+                    <li><span class="text-warning">Játékmenet:</span> A vakondok véletlenszerűen bújnak elő a lyukakból. Gyorsan kell reagálni, és le kell csapni rájuk!</li>
+                    <li><span class="text-warning">Pontozás:</span> Minden eltalált vakond 1 pontot ér.</li>
+                    <li><span class="text-warning">Hibázás:</span> Ha nem vakondot találsz el, pontlevonás járhat.</li>
+                    <li><span class="text-warning">Időkorlát:</span> A játék meghatározott ideig tart.</li>
+                    <li><span class="text-warning">Győzelem:</span> Az nyer, aki a játék végére a legtöbb pontot gyűjti össze!</li>
+                </ul>
+            </div>
+        </section>
     </main>
     <footer>
-
+        <p>2026 BBG &copy; Minden jog fenntartva!</p>
     </footer>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
