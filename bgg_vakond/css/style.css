@@ -21,6 +21,7 @@ main{
 }
 select{
     border: none;
+    height: 40px;
 }
 
 .jatekszabaly{
@@ -43,4 +44,30 @@ footer{
         width: 100% !important;
     }
 }
-
+.gameArea {
+    width: 750px;
+    height: 750px;
+    position: relative;
+    background-image: url("../img/jatekter.webp");
+    background-position: center center;
+    background-size: contain;
+        cursor: url("../img/kalapacs_kurzor.webp") 43 17,
+            url("../img/kalapacs_kurzor.png") 43 17,
+            pointer;
+}
+.gameArea:active {
+    cursor: url("../img/kalapacs_utes.webp") 45 26,
+            url("../img/kalapacs_utes.png") 45 26,
+            pointer;
+}
+.vakond,.vakondMegutott{
+    position: absolute;
+}
+.vakond{
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+}
