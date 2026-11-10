@@ -12,7 +12,7 @@ body{
   backdrop-filter: blur(10px);
   height: 100vh;
 }
-main{
+.leiras{
     height: calc(100vh - 124px);
 }
 
