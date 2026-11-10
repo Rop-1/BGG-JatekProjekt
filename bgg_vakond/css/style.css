@@ -15,8 +15,15 @@ body{
 main{
     height: calc(100vh - 124px);
 }
-.jatekszabaly{
+
+.ido, .pont, .btn-warning, .jatekszabaly, select{
     background-color: #faebd7;
+}
+select{
+    border: none;
+}
+
+.jatekszabaly{
     border: 5px solid #a52a2a;
     border-top-right-radius: 15px;
     border-bottom-right-radius: 15px;
