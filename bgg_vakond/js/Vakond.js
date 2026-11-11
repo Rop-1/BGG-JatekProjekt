@@ -1,79 +1,74 @@
-class Vakond{
+class Vakond {
     #x
     #y
     #container
-    #speed
     #element
-    #lathatoInterval
-    #helyek = [
-        {x: 116, y:96},
-        {x: 377, y: 96},
-        {x: 630, y: 96},
-
-        {x: 116, y:349},
-        {x: 377, y:349},
-        {x: 630, y:349},
-
-        {x: 116, y:603},
-        {x: 377, y:603},
-        {x: 630, y:603},
-    ]
-    static index
+    #timeout
+    #megutott = false
     static #score = 0
 
-
-    constructor(x, y, speed, container){
-        this.setHely(hely)
-        this.setSpeed(speed)
+    constructor(x, y, container, lathatosag) {
+        this.setX(x)
+        this.setY(y)
         this.setContainer(container)
-        this.createObject()
+        this.createObject(lathatosag)
     }
 
-    poz(){
-        index = Math.floor(Math.random() * 9);
+    setX(x) {
+        this.#x = x
     }
 
-    setX(index){
-        this.#x = this.#helyek[index[0]]
-    }
-    setY(index){
-        this.#y = this.#helyek[index[1]]
+    setY(y) {
+        this.#y = y
     }
 
-    setSpeed(speed){
-        this.#speed = speed
-    }
-
-    setContainer(container){
+    setContainer(container) {
         this.#container = document.querySelector(container)
     }
 
-    createObject(){
+    createObject(lathatosag) {
         this.#element = document.createElement("div")
-        this.#element.style.left = this.#x + "px"
-        this.#element.style.top = this.#y + "px"
+        this.#element.classList.add("vakond")
+        this.#element.style.left = (this.#x - 50) + "px"
+        this.#element.style.top = (this.#y - 50) + "px"
 
         this.#container.appendChild(this.#element)
-        this.#element.addEventListener('click', ()=> this.collect())
+        this.#element.addEventListener("click", () => this.collect())
+
+        this.#timeout = setTimeout(() => this.remove(), lathatosag)
     }
 
-    collect(){
-        Vakond.#score++
-        this.remove()
+    collect() {
+        if (this.#megutott) {
+            Vakond.#score--
+            this.#kiir()
+            this.remove()
+        } else {
+            Vakond.#score++
+            this.#kiir()
+
+            this.#megutott = true
+            clearTimeout(this.#timeout)
+            this.#element.classList.add("vakondMegutott")
+            this.#timeout = setTimeout(() => this.remove(), 2000)
+        }
     }
 
-    remove(){
+    #kiir() {
+        document.querySelector(".pont span").innerHTML = Vakond.#score
+    }
+
+    remove() {
+        clearTimeout(this.#timeout)
         this.#element.remove()
-        clearInterval(this.#lathatoInterval)
     }
 
-    static getScore(){
+    static getScore() {
         return Vakond.#score
     }
 
-    static resetGame(){
+    static resetGame() {
         Vakond.#score = 0
+        document.querySelector(".pont span").innerHTML = 0
     }
-
-
 }
